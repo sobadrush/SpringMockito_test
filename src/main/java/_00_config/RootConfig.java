@@ -13,10 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.ctbc.dao.DeptDAO;
-
 @Configuration
-@ComponentScan(basePackageClasses = { DeptDAO.class })
+@ComponentScan(basePackages = { "com.ctbc.dao.**" , "com.ctbc.service.**"  })
 public class RootConfig {
 
 	@Bean
@@ -48,6 +46,7 @@ public class RootConfig {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		context.close();
 	}
 }
